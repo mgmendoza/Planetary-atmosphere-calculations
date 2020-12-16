@@ -1,26 +1,29 @@
-# Specific gas constants [J/kg-K]
+
+clear
+clc
+% Specific gas constants [J/kg-K]
 R_earth = 287;
 R_mars = 188.92;
 R_venus = 188.92;
 
-# Planet radii [m]
+% Planet radii [m]
 r_earth = 6378.14e3;
 r_mars = 3397.2e3;
 r_venus = 6051.8e3;
 
-# Gravitational acceleration at planet surface [m/s2]
+% Gravitational acceleration at planet surface [m/s2]
 g_earth = 9.8;
 g_mars = 3.8;
 g_venus = 8.9;
 
-## Equations
-# Geopotential altitude h as function of geometric altitude h_g, and planet radius r_p
-# h = r_p*h_g/(r_p + h_g);
-# 
-## Hydrostatic eq. for isothermal layer
-# p2_iso = p1*exp(-(go/(R*T))*(h2-h1));
-# rho2_iso = rho1*exp(-(go/(R*T))*(h2-h1))
-# 
+% %Equations
+% % Geopotential altitude h as function of geometric altitude h_g, and planet radius r_p
+% h = r_p*h_g/(r_p + h_g);
+% 
+% % Hydrostatic eq. for isothermal layer
+% p2_iso = p1*exp(-(go/(R*T))*(h2-h1));
+% rho2_iso = rho1*exp(-(go/(R*T))*(h2-h1))
+% 
 % % Hydrostatic eq. for gradient layer 
 % p2_grad = p1*(T2/T1)^-(go/aR);
 % rho2_grad = rho1*(T2/T1)^(-go/(a*R)-1)
@@ -99,3 +102,4 @@ Earth.rho = [1.225,8.8909e-2,4.0028e-3,6.1108e-4];
 rho_mars_earth = Mars.rho./Earth.rho
 rho_venus_earth = Venus.rho./Earth.rho
 rho_venus_mars = Venus.rho./Mars.rho
+
